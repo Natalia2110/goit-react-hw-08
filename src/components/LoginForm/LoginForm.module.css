@@ -1,0 +1,42 @@
+.form {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 24px;
+  width: 400;
+}
+
+.field {
+  display: block;
+  min-width: 500px;
+  padding: 10px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.submitBtn {
+  border: none;
+  margin: 0 auto;
+  padding: 10px 20px;
+  min-width: 140px;
+  border-radius: 15px;
+  background-color: #aeaeae;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.errorText {
+  font-size: 14px;
+  color: red;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+}
