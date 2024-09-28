@@ -21,7 +21,6 @@ const UpdateModal = () => {
           </Typography>
         </Box>
       </Modal>
-      ;
     </div>
   );
 };

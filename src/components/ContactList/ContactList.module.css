@@ -12,7 +12,7 @@
 .contacts-item {
   width: 368px;
   padding: 20px 15px;
-  border: 1px solid rgba(52, 104, 216, 0.876);
+  border: 1px solid #3468d8df;
   border-radius: 10px;
-  background-color: rgba(172, 197, 250, 0.587);
+  background-color: #acc5fa96;
 }
