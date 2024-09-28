@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import css from "./ContactForm.module.css";
 import toast from "react-hot-toast";
+import Button from "@mui/material/Button";
 
 const INITIAL_VALUES = {
   contactName: "",
@@ -81,10 +82,13 @@ const ContactForm = () => {
             className={css.error}
           />
         </label>
-
-        <button className={css.btn} type="submit">
+        <Button type="submit" variant="contained">
           Add contact
-        </button>
+        </Button>
+
+        {/* <button className={css.btn} type="submit">
+          Add contact
+        </button> */}
       </Form>
     </Formik>
   );

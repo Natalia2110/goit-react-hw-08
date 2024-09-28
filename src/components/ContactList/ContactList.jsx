@@ -12,9 +12,10 @@ const ContactList = () => {
         return (
           <li key={contact.id} className={css["contacts-item"]}>
             <Contact
-              id={contact.id}
-              name={contact.name}
-              number={contact.number}
+              contact={contact}
+              // id={contact.id}
+              // name={contact.name}
+              // number={contact.number}
             />
           </li>
         );

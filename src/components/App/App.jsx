@@ -26,6 +26,7 @@ import {
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
 import RestrictedRoute from "../RestrictedRoute.jsx";
 import PrivateRoute from "../PrivateRoute.jsx";
+import Loader from "../Loader/Loader.jsx";
 
 const ContactsPage = lazy(() =>
   import("../../pages/ContactsPage/ContactsPage.jsx")
@@ -50,11 +51,13 @@ const App = () => {
   //   dispatch(logout());
   // };
 
-  if (isRefreshing) return <p>User is refreshing, please wait</p>;
+  // if (isRefreshing) return <p>User is refreshing, please wait</p>
 
   return isRefreshing ? (
-    <p>User is refreshing, please wait</p>
+    <Loader />
   ) : (
+    // <p>User is refreshing, please wait</p>
+    //
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />

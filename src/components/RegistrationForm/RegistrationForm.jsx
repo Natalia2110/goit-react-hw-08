@@ -5,6 +5,7 @@ import css from "./RegistrationForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operation";
 import { selectAuthError } from "../../redux/auth/selectors";
+import Button from "@mui/material/Button";
 
 const RegisterValidationSchema = Yup.object().shape({
   name: Yup.string()
@@ -45,7 +46,7 @@ const RegistrationForm = () => {
       {({ errors }) => (
         <Form className={css.form}>
           <label className={css.label}>
-            <span>Name:</span>
+            <span className={css["form-span"]}>Name:</span>
             <Field
               type="text"
               name="name"
@@ -59,7 +60,7 @@ const RegistrationForm = () => {
             />
           </label>
           <label className={css.label}>
-            <span>Email:</span>
+            <span className={css["form-span"]}>Email:</span>
             <Field
               type="text"
               name="email"
@@ -74,7 +75,7 @@ const RegistrationForm = () => {
           </label>
 
           <label className={css.label}>
-            <span>Password:</span>
+            <span className={css["form-span"]}>Password:</span>
             <Field
               type="password"
               name="password"
@@ -88,13 +89,15 @@ const RegistrationForm = () => {
             />
           </label>
 
-          <button
+          <Button
+            variant="contained"
             disabled={Object.keys(errors).length > 0}
-            className={css.submitBtn}
+            // className={css.submitBtn}
+            size="large"
             type="submit"
           >
             Register
-          </button>
+          </Button>
           {error && (
             <p className={css.errorText}>Oops, some error occured... {error}</p>
           )}

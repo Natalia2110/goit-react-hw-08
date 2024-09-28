@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getIsLoading, getError } from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();

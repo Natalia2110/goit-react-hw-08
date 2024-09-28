@@ -2,10 +2,12 @@
   display: inline-block;
   text-decoration: none;
   padding: 12px;
-  font-weight: 700;
-  color: #2a363b;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
 }
 
 .link.active {
-  color: #e84a5f;
+  color: #1976d2;
 }

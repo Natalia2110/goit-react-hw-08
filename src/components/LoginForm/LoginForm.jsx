@@ -5,12 +5,9 @@ import css from "./LoginForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/auth/operation.js";
 import { selectAuthError } from "../../redux/auth/selectors";
+import Button from "@mui/material/Button";
 
 const LoginValidationSchema = Yup.object().shape({
-  // name: Yup.string()
-  //   .required("Ім'я користувача є обов'язковим")
-  //   .min(2, "Ім'я користувача має бути мінімум в 2 символи")
-  //   .max(100, "Ім'я користувача має бути меншим за 100 символів"),
   password: Yup.string()
     .required("Пароль є обов'язковим")
     .min(8, "Пароль має бути мінімум в 8 символи")
@@ -44,22 +41,8 @@ const LoginForm = () => {
     >
       {({ errors }) => (
         <Form className={css.form}>
-          {/* <label className={css.label}>
-            <span>Name:</span>
-            <Field
-              type="text"
-              name="name"
-              className={css.field}
-              placeholder="Кирило"
-            />
-            <ErrorMessage
-              className={css.errorText}
-              name="name"
-              component="span"
-            />
-          </label> */}
           <label className={css.label}>
-            <span>Email:</span>
+            <span className={css["form-span"]}>Email:</span>
             <Field
               type="text"
               name="email"
@@ -74,7 +57,7 @@ const LoginForm = () => {
           </label>
 
           <label className={css.label}>
-            <span>Password:</span>
+            <span className={css["form-span"]}>Password:</span>
             <Field
               type="password"
               name="password"
@@ -88,13 +71,15 @@ const LoginForm = () => {
             />
           </label>
 
-          <button
+          <Button
             disabled={Object.keys(errors).length > 0}
-            className={css.submitBtn}
+            // className={css.submitBtn}
+            variant="contained"
+            size="large"
             type="submit"
           >
             Log in
-          </button>
+          </Button>
           {error && (
             <p className={css.errorText}>Oops, some error occured... {error}</p>
           )}

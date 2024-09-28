@@ -1,9 +1,13 @@
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
 
 .username {
-  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1976d2;
+  font-weight: 400;
 }
