@@ -4,7 +4,7 @@ import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "../Layout.jsx";
 import { selectAuthIsRefreshing } from "../../redux/auth/selectors.js";
-import { refreshUser } from "../../redux/auth/operation.js";
+import { refreshUser } from "../../redux/auth/operations.js";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
 import RestrictedRoute from "../RestrictedRoute.jsx";
 import PrivateRoute from "../PrivateRoute.jsx";

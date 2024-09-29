@@ -3,7 +3,7 @@ import * as Yup from "yup";
 
 import css from "./RegistrationForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../redux/auth/operation";
+import { register } from "../../redux/auth/operations";
 import { selectAuthError } from "../../redux/auth/selectors";
 import Button from "@mui/material/Button";
 
