@@ -30,7 +30,6 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleOnAddContact = (values, actions) => {
-    // console.log(values);
     const contactObject = {
       name: values.contactName,
       number: values.contactNumber,

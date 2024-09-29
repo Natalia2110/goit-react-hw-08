@@ -22,14 +22,12 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const error = useSelector(selectAuthError);
   const INITIAL_VALUES = {
-    // name: "",
     email: "",
     password: "",
   };
 
   const handleSubmit = (values, actions) => {
     dispatch(login(values));
-    console.log(values);
     actions.resetForm();
   };
 
@@ -73,7 +71,6 @@ const LoginForm = () => {
 
           <Button
             disabled={Object.keys(errors).length > 0}
-            // className={css.submitBtn}
             variant="contained"
             size="large"
             type="submit"

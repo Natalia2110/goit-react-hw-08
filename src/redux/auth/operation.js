@@ -28,7 +28,6 @@ export const register = createAsyncThunk(
   async (formData, thunkApi) => {
     try {
       const { data } = await instance.post("/users/signup", formData);
-      console.log("data:", data);
       setAuthHeders(data.token);
 
       return data;

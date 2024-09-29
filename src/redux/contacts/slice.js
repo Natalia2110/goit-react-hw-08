@@ -3,7 +3,7 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
-  // updateContact,
+  updateContact,
 } from "./operations";
 import { createSelector } from "@reduxjs/toolkit";
 import { getContacts } from "./selectors";
@@ -57,19 +57,24 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      }),
-  // .addCase(updateContact.pending, (state, action) => {
-  //   state.loading = true;
-  //   state.error = null;
-  // })
-  // .addCase(updateContact.fulfilled, (state, action) => {
-  //   state.loading = false;
+      })
+      .addCase(updateContact.pending, (state, action) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
 
-  // })
-  // .addCase(updateContact.rejected, (state, action) => {
-  //   state.loading = false;
-  //   state.error = action.payload;
-  // }),
+        const index = state.items.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        state.items[index] = action.payload;
+      })
+      .addCase(updateContact.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      }),
 });
 
 export const contactsReduser = contactsSlice.reducer;

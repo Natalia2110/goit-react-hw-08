@@ -25,7 +25,7 @@
   padding: 0;
 }
 .field {
-  padding: 4px 10px;
+  padding: 10px 15px;
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -33,7 +33,17 @@
   border: 1px solid rgba(52, 104, 216, 0.876);
   border-radius: 10px;
 }
-.btn {
+
+.error {
+  font-size: 14px;
+  color: rgb(126, 26, 113);
+  background-color: transparent;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+}
+
+/* .btn {
   display: block;
   max-width: 200px;
   max-height: 50px;
@@ -48,12 +58,4 @@
   border-radius: 10px;
   background-color: rgba(51, 108, 229, 0.54);
   color: rgb(12, 40, 99);
-}
-.error {
-  font-size: 14px;
-  color: rgb(126, 26, 113);
-  background-color: transparent;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 5px;
-}
+} */

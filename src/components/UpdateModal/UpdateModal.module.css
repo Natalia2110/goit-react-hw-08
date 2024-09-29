@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.form-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-span {
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(94, 95, 96);
+  margin: 0;
+  padding: 0;
+}
+.field {
+  padding: 10px 15px;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid rgba(52, 104, 216, 0.876);
+  border-radius: 10px;
+}
+
+.error {
+  font-size: 14px;
+  color: rgb(126, 26, 113);
+  background-color: transparent;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+}
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}

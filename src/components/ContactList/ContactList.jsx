@@ -11,12 +11,7 @@ const ContactList = () => {
       {filteredContacts.map((contact) => {
         return (
           <li key={contact.id} className={css["contacts-item"]}>
-            <Contact
-              contact={contact}
-              // id={contact.id}
-              // name={contact.name}
-              // number={contact.number}
-            />
+            <Contact contact={contact} />
           </li>
         );
       })}

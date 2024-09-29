@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { getIsLoading, getError } from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
 import Loader from "../../components/Loader/Loader";
-// import toast from "react-hot-toast";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -16,10 +15,6 @@ const ContactsPage = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-    // .unwrap()
-    // .then(() => {
-    //   toast.success("Contacts loaded successfully🎉");
-    // });
   }, [dispatch]);
   return (
     <div className={css.container}>

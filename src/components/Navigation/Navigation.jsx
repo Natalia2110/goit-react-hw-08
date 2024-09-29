@@ -11,7 +11,6 @@ export const Navigation = () => {
     <nav>
       <NavLink
         className={({ isActive }) => clsx(css.link, isActive && css.active)}
-        // className={css.link}
         to="/"
       >
         Home

@@ -2,8 +2,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import css from "./DeleteModal.module.css";
-// import { Typography } from "@mui/material";
-// import { useState } from "react";
 
 const style = {
   position: "absolute",
@@ -23,12 +21,7 @@ const style = {
 export const DeleteModal = ({ isOpen, onClose, onDelete }) => {
   return (
     <div>
-      <Modal
-        open={isOpen}
-        onClose={onClose}
-        // aria-labelledby="modal-modal-title"
-        // aria-describedby="modal-modal-description"
-      >
+      <Modal open={isOpen} onClose={onClose}>
         <Box sx={style}>
           <p className={css.title}>Are you sure you want to delete contact?</p>
           <div className={css["btn-box"]}>

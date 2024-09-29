@@ -33,7 +33,6 @@ const RegistrationForm = () => {
 
   const handleSubmit = (values, actions) => {
     dispatch(register(values));
-    console.log(values);
     actions.resetForm();
   };
 
@@ -92,7 +91,6 @@ const RegistrationForm = () => {
           <Button
             variant="contained"
             disabled={Object.keys(errors).length > 0}
-            // className={css.submitBtn}
             size="large"
             type="submit"
           >

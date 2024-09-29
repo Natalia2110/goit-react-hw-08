@@ -19,11 +19,6 @@ const authConfig = {
   storage,
   whitelist: ["token"],
 };
-const filterConfig = {
-  key: "filter",
-  storage,
-  whitelist: ["name"],
-};
 
 export const store = configureStore({
   reducer: {
@@ -31,11 +26,6 @@ export const store = configureStore({
     filter: filtersReduser,
     auth: persistReducer(authConfig, authReduser),
   },
-  // reducer: {
-  //   contacts: contactsReduser,
-  //   filter: filtersReduser,
-  //   auth: authReduser,
-  // },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

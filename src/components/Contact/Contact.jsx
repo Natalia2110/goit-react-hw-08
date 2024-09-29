@@ -1,13 +1,10 @@
-// import * as React from "react";
 import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import {
-  deleteContact,
-  // updateContact,
-} from "../../redux/contacts/operations.js";
+import { deleteContact } from "../../redux/contacts/operations.js";
 import DeleteModal from "../DeleteModal/DeleteModal.jsx";
+import UpdateModal from "../UpdateModal/UpdateModal.jsx";
 import css from "./Contact.module.css";
 import toast from "react-hot-toast";
 import Button from "@mui/material/Button";
@@ -20,11 +17,17 @@ const Contact = ({ contact }) => {
   const handleCloseModalDelete = () => {
     setModalDeleteIsOpen(false);
   };
+  const [updateModalIsOpen, setUpdateModalIsOpen] = useState(false);
+  const handleOpenUpdateModal = () => {
+    setUpdateModalIsOpen(true);
+  };
+  const handleCloseUpdateModal = () => {
+    setUpdateModalIsOpen(false);
+  };
 
   const dispatch = useDispatch();
   const id = contact.id;
   const deleteContactById = (id) => {
-    // console.log(id);
     const thunk = deleteContact(id);
     dispatch(thunk)
       .unwrap()
@@ -33,16 +36,6 @@ const Contact = ({ contact }) => {
       });
   };
 
-  // const updateContactByName = (contact) => {
-  //   console.log(contact);
-
-  //   const thunk = updateContact(contact);
-  //   dispatch(thunk)
-  //     .unwrap()
-  //     .then(() => {
-  //       toast.success("Contact update successfully");
-  //     });
-  // };
   return (
     <div className={css["contact"]}>
       <div className={css["contact-box"]}>
@@ -56,19 +49,17 @@ const Contact = ({ contact }) => {
         </p>
       </div>
       <div className={css["btn-box"]}>
-        <Button
-          variant="contained"
-          // onClick={handleOpen}
-        >
+        <Button variant="contained" onClick={handleOpenUpdateModal}>
           Update
         </Button>
-        <Button
-          variant="contained"
-          onClick={
-            handleOpenModalDelete
-            // () => deleteContactById(id)
-          }
-        >
+
+        <UpdateModal
+          contact={contact}
+          isOpen={updateModalIsOpen}
+          onClose={handleCloseUpdateModal}
+        />
+
+        <Button variant="contained" onClick={handleOpenModalDelete}>
           Delete
         </Button>
         <DeleteModal
@@ -79,14 +70,6 @@ const Contact = ({ contact }) => {
           }}
         />
       </div>
-
-      {/* <button
-        type="button"
-        className={css.btn}
-        onClick={() => deleteContactById(id)}
-      >
-        Delete
-      </button> */}
     </div>
   );
 };
