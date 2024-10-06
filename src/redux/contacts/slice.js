@@ -5,6 +5,7 @@ import {
   deleteContact,
   updateContact,
 } from "./operations";
+import { logout } from "../auth/operations";
 import { createSelector } from "@reduxjs/toolkit";
 import { getContacts } from "./selectors";
 import { selectNameFilter } from "../filters/selectors";
@@ -20,7 +21,7 @@ const contactsSlice = createSlice({
   initialState: INITIAL_STATE,
   extraReducers: (builder) =>
     builder
-      .addCase(fetchContacts.pending, (state, action) => {
+      .addCase(fetchContacts.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -32,7 +33,7 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      .addCase(addContact.pending, (state, action) => {
+      .addCase(addContact.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -44,7 +45,7 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      .addCase(deleteContact.pending, (state, action) => {
+      .addCase(deleteContact.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -58,7 +59,7 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      .addCase(updateContact.pending, (state, action) => {
+      .addCase(updateContact.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -74,6 +75,11 @@ const contactsSlice = createSlice({
       .addCase(updateContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.items = [];
+        state.error = null;
+        state.loading = false;
       }),
 });
 
